@@ -1,0 +1,45 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity$TitleFragment">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+        <TextView
+            android:text="@string/Favorites"
+            android:id="@+id/favorites_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"/>
+            />
+
+        <TextView
+            android:text="@string/RoutePlanner"
+            android:id="@+id/routeplanner_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"/>
+        />
+
+        <TextView
+            android:text="@string/SearchStops"
+            android:id="@+id/searchstops_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"/>
+        />
+
+    </LinearLayout>
+
+</FrameLayout>
