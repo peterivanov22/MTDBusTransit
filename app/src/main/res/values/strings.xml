@@ -2,12 +2,18 @@
     <string name="app_name">MTDBusTransit</string>
     <string name="Favorites">Favorites</string>
     <string name="RoutePlanner">RoutePlanner</string>
-    <string name="SearchStops">Favorites</string>
+    <string name="SearchStops">SearchStops</string>
     <string name="action_settings">Settings</string>
+
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_route_planner">RoutePlannerActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_favorites">FavoritesActivity</string>
+
+    <string name="origin">Origin</string>
+    <string name="destination">Destination</string>
+    <string name="title_activity_route_planner_stops">RoutePlannerStops</string>
+
 </resources>

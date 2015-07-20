@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.TextView;
 
 /**
@@ -22,6 +21,7 @@ public class TitleFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
         TextView favorites = (TextView) rootView.findViewById(R.id.favorites_textview);
         TextView routeplanner = (TextView) rootView.findViewById(R.id.routeplanner_textview);
         TextView searchStops = (TextView) rootView.findViewById(R.id.searchstops_textview);
@@ -54,7 +54,6 @@ public class TitleFragment extends Fragment {
             }
         });
 
-        TextView favorites_textview = (TextView) rootView.findViewById(R.id.favorites_textview);
 
         return rootView;
     }

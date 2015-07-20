@@ -32,6 +32,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.mtdbustransit.MainActivity" />
         </activity>
+        <activity
+            android:name=".RoutePlannerStops"
+            android:label="@string/title_activity_route_planner_stops"
+            android:parentActivityName=".RoutePlannerActivity">
+        </activity>
     </application>
 
 </manifest>
