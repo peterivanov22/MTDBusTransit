@@ -1,13 +1,9 @@
 package com.example.android.mtdbustransit;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 
 public class RoutePlannerStops extends ActionBarActivity {
@@ -18,7 +14,7 @@ public class RoutePlannerStops extends ActionBarActivity {
         setContentView(R.layout.activity_route_planner_stops);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new RoutePlannerStopsFragment())
                     .commit();
         }
     }
@@ -46,23 +42,6 @@ public class RoutePlannerStops extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_route_planner_stops, container, false);
 
 
-
-
-            return rootView;
-        }
-    }
 }

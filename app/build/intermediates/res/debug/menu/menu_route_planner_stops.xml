@@ -5,4 +5,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-<!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/src/main/res/menu/menu_route_planner_stops.xml -->
+<!-- From: file:/C:/Users/ivanov3/AndroidStudioProjects/MTDBusTransit/app/src/main/res/menu/menu_route_planner_stops.xml -->
