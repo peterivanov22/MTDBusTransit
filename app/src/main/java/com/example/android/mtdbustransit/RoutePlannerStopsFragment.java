@@ -11,6 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,7 +45,8 @@ public class RoutePlannerStopsFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
         if (id == R.id.action_refresh){
-
+            FetchStopsTask stopsTask = new FetchStopsTask();
+            stopsTask.execute();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -57,17 +62,27 @@ public class RoutePlannerStopsFragment extends Fragment {
         return rootView;
     }
 
-    public class FetchStopsTask extends AsyncTask<Void, Void, Void> {
+    public class FetchStopsTask extends AsyncTask<Void, Void, String[]> {
 
         @Override
-        protected Void doInBackground(Void... params) {
+        protected String[] doInBackground(Void... params) {
+
+        private String[] getStopsDataFromJson(String stopsJsonStr)
+            throws JSONException{
+
+                JSONObject stopsList = new JSONObject(stopsJsonStr);
+                JSONArray stopsArray
+            }
+
+
+
 
             // These two need to be declared outside the try/catch
             // so that they can be closed in the finally block.
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
             // Will contain the raw JSON response as a string.
-            String forecastJsonStr = null;
+            String stopsJsonStr = null;
             try {
 // Construct the URL for the OpenWeatherMap query
 // Possible parameters are available at OWM's forecast API page, at
@@ -82,7 +97,7 @@ public class RoutePlannerStopsFragment extends Fragment {
                 StringBuffer buffer = new StringBuffer();
                 if (inputStream == null) {
 // Nothing to do.
-                    forecastJsonStr = null;
+                    stopsJsonStr = null;
                 }
                 reader = new BufferedReader(new InputStreamReader(inputStream));
                 String line;
@@ -94,14 +109,14 @@ public class RoutePlannerStopsFragment extends Fragment {
                 }
                 if (buffer.length() == 0) {
 // Stream was empty. No point in parsing.
-                    forecastJsonStr = null;
+                    stopsJsonStr = null;
                 }
-                forecastJsonStr = buffer.toString();
+                stopsJsonStr = buffer.toString();
             } catch (IOException e) {
-                Log.e("RoutePlannerStopsFragment", "Error ", e);
+                Log.e("RoutePlannerStops", "Error ", e);
 // If the code didn't successfully get the weather data, there's no point in attempting
 // to parse it.
-                forecastJsonStr = null;
+                stopsJsonStr = null;
             } finally {
                 if (urlConnection != null) {
                     urlConnection.disconnect();
@@ -110,10 +125,16 @@ public class RoutePlannerStopsFragment extends Fragment {
                     try {
                         reader.close();
                     } catch (final IOException e) {
-                        Log.e("RoutePlannerStopsFragment", "Error closing stream", e);
+                        Log.e("RoutePlannerStops", "Error closing stream", e);
                     }
                 }
             }
+
+            try {
+                return getStopsDataFromJson(stopsJsonStr);
+            } catch (JSONException e) {
+                Log.e(LOG_TAG, e.getMessage(), e);
+                e.printStackTrace();
             return null;
         }
     }
