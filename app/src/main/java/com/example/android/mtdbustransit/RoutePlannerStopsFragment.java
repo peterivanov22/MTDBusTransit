@@ -23,6 +23,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -59,21 +61,24 @@ public class RoutePlannerStopsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        List<String> empty = new ArrayList<String>();
+
         mStopsListAdapter =
                 new ArrayAdapter<String>(
                         getActivity(),
                         R.layout.list_item_stop,
                         R.id.list_item_stop_textview,
-                        FAKEDATA);
+                        empty);
 
-        View rootView = inflater.inflate(R.layout.fragment_route_planner_stops??, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_route_planner_stops, container, false);
 
         ListView listView = (ListView) rootView.findViewById(R.id.listview_stops_list);
         listView.setAdapter(mStopsListAdapter);
 
         return rootView;
     }
- k 
+
     public class FetchStopsTask extends AsyncTask<Void, Void, String[]> {
 
         private final String LOG_TAG = FetchStopsTask.class.getSimpleName();
