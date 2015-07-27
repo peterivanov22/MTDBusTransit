@@ -41,7 +41,7 @@
                 android:value="com.example.android.mtdbustransit.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.android.mtdbustransit.RoutePlannerStops"
+            android:name="com.example.android.mtdbustransit.RoutePlannerStopsActivity"
             android:label="@string/title_activity_route_planner_stops"
             android:parentActivityName="com.example.android.mtdbustransit.RoutePlannerActivity" >
         </activity>

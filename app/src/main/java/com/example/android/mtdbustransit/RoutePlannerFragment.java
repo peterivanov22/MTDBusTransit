@@ -31,7 +31,7 @@ public class RoutePlannerFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_route_planner, container, false);
 
-        TextView origin = (TextView) rootView.findViewById(R.id.origin_edittext);
+        TextView origin = (TextView) rootView.findViewById(R.id.origin_textview);
         EditText destination = (EditText) rootView.findViewById(R.id.destination_edittext);
 
 
@@ -39,11 +39,11 @@ public class RoutePlannerFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RoutePlannerStops.class);
+                Intent intent = new Intent(getActivity(), RoutePlannerStopsActivity.class);
                 startActivity(intent);
 
             }
         });
-        return inflater.inflate(R.layout.fragment_route_planner, container, false);
+        return rootView;
     }
 }
