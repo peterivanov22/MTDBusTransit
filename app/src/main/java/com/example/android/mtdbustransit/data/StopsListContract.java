@@ -19,7 +19,6 @@ import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
-import android.text.format.Time;
 
 /**
  * Defines table and column names for the weather database.
@@ -41,7 +40,6 @@ public class StopsListContract {
     // looking at weather data. content://com.example.android.sunshine.app/givemeroot/ will fail,
     // as the ContentProvider hasn't been given any information on what to do with "givemeroot".
     // At least, let's hope not.  Don't be that dev, reader.  Don't be that dev.
-    public static final String PATH_WEATHER = "weather";
     public static final String PATH_STOPSLIST = "stopsList";
 
 
@@ -58,10 +56,6 @@ public class StopsListContract {
 
         // Table name
         public static final String TABLE_NAME = "stopsList";
-
-        // The location setting string is what will be sent to openweathermap
-        // as the location query.
-        public static final String COLUMN_LOCATION_SETTING = "location_setting";
 
         // Human readable location string, provided by the API.  Because for styling,
         // "Mountain View" is more recognizable than 94043.
@@ -84,16 +78,6 @@ public class StopsListContract {
             return uri.getPathSegments().get(1);
         }
 
-        public static long getDateFromUri(Uri uri) {
-            return Long.parseLong(uri.getPathSegments().get(2));
-        }
 
-        public static long getStartDateFromUri(Uri uri) {
-            String dateString = uri.getQueryParameter(COLUMN_DATE);
-            if (null != dateString && dateString.length() > 0)
-                return Long.parseLong(dateString);
-            else
-                return 0;
-        }
     }
-}
+

@@ -19,15 +19,16 @@ package com.example.android.mtdbustransit.data;
  * limitations under the License.
  */
 
-        import android.content.ContentProvider;
-        import android.annotation.TargetApi;
-        import android.content.ContentProvider;
-        import android.content.ContentValues;
-        import android.content.UriMatcher;
-        import android.database.Cursor;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.database.sqlite.SQLiteQueryBuilder;
-        import android.net.Uri;
+import android.annotation.TargetApi;
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.content.UriMatcher;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteQueryBuilder;
+import android.net.Uri;
+
+import java.sql.SQLException;
 
 public class StopsListProvider extends ContentProvider {
 
@@ -35,12 +36,12 @@ public class StopsListProvider extends ContentProvider {
     private static final UriMatcher sUriMatcher = buildUriMatcher();
     private StopsListDbHelper mOpenHelper;
 
-    static final int STOP_NAME = 1;
-    static final int STOP_ID = 2;
+    static final int STOP_LIST = 1;
+    static final int STOP_ENTRY = 2;
 
 
 
-    private static final SQLiteQueryBuilder sStopsListQueryBuilder;
+    SQLiteQueryBuilder sStopsListQueryBuilder;
 
 
 
@@ -61,8 +62,8 @@ public class StopsListProvider extends ContentProvider {
         final String authority = StopsListContract.CONTENT_AUTHORITY;
 
         // For each type of URI you want to add, create a corresponding code.
-        matcher.addURI(authority, "stop_name", STOP_NAME);
-        matcher.addURI(authority, "stop_id", STOP_ID);
+        matcher.addURI(authority, StopsListContract.PATH_STOPSLIST, STOP_LIST);
+        matcher.addURI(authority, StopsListContract.PATH_STOPSLIST + "/#", STOP_ENTRY);
 
         return matcher;
     }
@@ -90,10 +91,10 @@ public class StopsListProvider extends ContentProvider {
 
         switch (match) {
             // Student: Uncomment and fill out these two cases
-            case STOP_ID:
-                return WeatherContract.WeatherEntry.CONTENT_ITEM_TYPE;
-            case STOP_NAME:
-                return WeatherContract.WeatherEntry.CONTENT_TYPE;
+            case STOP_LIST:
+                return StopsListContract.StopsListEntry.CONTENT_TYPE;
+            case STOP_ENTRY:
+                return StopsListContract.StopsListEntry.CONTENT_ITEM_TYPE;
 
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
@@ -105,43 +106,19 @@ public class StopsListProvider extends ContentProvider {
                         String sortOrder) {
         // Here's the switch statement that, given a URI, will determine what kind of request it is,
         // and query the database accordingly.
-        Cursor retCursor;
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        qb.setTables( StopsListContract.StopsListEntry.TABLE_NAME);
+
         switch (sUriMatcher.match(uri)) {
-            // "weather/*/*"
-            case WEATHER_WITH_LOCATION_AND_DATE:
+
+            case STOP_LIST:
             {
-                retCursor = getWeatherByLocationSettingAndDate(uri, projection, sortOrder);
+
                 break;
             }
             // "weather/*"
-            case WEATHER_WITH_LOCATION: {
-                retCursor = getWeatherByLocationSetting(uri, projection, sortOrder);
-                break;
-            }
-            // "weather"
-            case WEATHER: {
-                retCursor = mOpenHelper.getReadableDatabase().query(
-                        WeatherContract.WeatherEntry.TABLE_NAME,
-                        projection,
-                        selection,
-                        selectionArgs,
-                        null,
-                        null,
-                        sortOrder
-                );
-                break;
-            }
-            // "location"
-            case LOCATION: {
-                retCursor = mOpenHelper.getReadableDatabase().query(
-                        WeatherContract.LocationEntry.TABLE_NAME,
-                        projection,
-                        selection,
-                        selectionArgs,
-                        null,
-                        null,
-                        sortOrder
-                );
+            case STOP_ENTRY: {
+                qb.appendWhere();
                 break;
             }
 
@@ -158,32 +135,16 @@ public class StopsListProvider extends ContentProvider {
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-        final int match = sUriMatcher.match(uri);
-        Uri returnUri;
+        long rowID = db.insert(StopsListContract.StopsListEntry.TABLE_NAME, "", values);
 
-        switch (match) {
-            case WEATHER: {
-                normalizeDate(values);
-                long _id = db.insert(WeatherContract.WeatherEntry.TABLE_NAME, null, values);
-                if ( _id > 0 )
-                    returnUri = WeatherContract.WeatherEntry.buildWeatherUri(_id);
-                else
-                    throw new android.database.SQLException("Failed to insert row into " + uri);
-                break;
-            }
-            case LOCATION: {
-                long _id = db.insert(WeatherContract.LocationEntry.TABLE_NAME, null, values);
-                if ( _id > 0 )
-                    returnUri = WeatherContract.LocationEntry.buildLocationUri(_id);
-                else
-                    throw new android.database.SQLException("Failed to insert row into " + uri);
-                break;
-            }
-            default:
-                throw new UnsupportedOperationException("Unknown uri: " + uri);
+        if (rowID>0){
+            Uri resultUri = StopsListContract.StopsListEntry.buildStopsListUri(rowID);
+            getContext().getContentResolver().notifyChange(resultUri, null);
+            return resultUri;
         }
-        getContext().getContentResolver().notifyChange(uri, null);
-        return returnUri;
+
+        throw new UnsupportedOperationException("Unknown uri: " + uri);
+
     }
 
     @Override
