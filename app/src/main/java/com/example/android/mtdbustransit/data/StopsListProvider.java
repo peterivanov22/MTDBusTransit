@@ -29,8 +29,6 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import java.sql.SQLException;
-
 public class StopsListProvider extends ContentProvider {
 
     // The URI Matcher used by this content provider.
