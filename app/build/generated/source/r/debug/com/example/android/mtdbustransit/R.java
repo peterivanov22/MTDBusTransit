@@ -1526,7 +1526,7 @@ containing a value of this type.
         public static final int notification_template_icon_bg=0x7f02003b;
     }
     public static final class id {
-        public static final int action0=0x7f090057;
+        public static final int action0=0x7f090059;
         public static final int action_bar=0x7f090040;
         public static final int action_bar_activity_content=0x7f090000;
         public static final int action_bar_container=0x7f09003f;
@@ -1535,22 +1535,22 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f090024;
         public static final int action_bar_title=0x7f090023;
         public static final int action_context_bar=0x7f090041;
-        public static final int action_divider=0x7f09005b;
+        public static final int action_divider=0x7f09005d;
         public static final int action_menu_divider=0x7f090002;
         public static final int action_menu_presenter=0x7f090003;
         public static final int action_mode_bar=0x7f09003d;
         public static final int action_mode_bar_stub=0x7f09003c;
         public static final int action_mode_close_button=0x7f090025;
-        public static final int action_refresh=0x7f090065;
-        public static final int action_settings=0x7f090064;
+        public static final int action_refresh=0x7f090067;
+        public static final int action_settings=0x7f090066;
         public static final int activity_chooser_view_content=0x7f090026;
         public static final int alertTitle=0x7f090030;
         public static final int always=0x7f090016;
         public static final int beginning=0x7f090013;
         public static final int buttonPanel=0x7f090036;
-        public static final int cancel_action=0x7f090058;
+        public static final int cancel_action=0x7f09005a;
         public static final int checkbox=0x7f090038;
-        public static final int chronometer=0x7f09005e;
+        public static final int chronometer=0x7f090060;
         public static final int collapseActionView=0x7f090017;
         public static final int container=0x7f09004f;
         public static final int contentPanel=0x7f090031;
@@ -1564,7 +1564,7 @@ containing a value of this type.
         public static final int dropdown=0x7f09001c;
         public static final int edit_query=0x7f090042;
         public static final int end=0x7f090014;
-        public static final int end_padder=0x7f090063;
+        public static final int end_padder=0x7f090065;
         public static final int expand_activities_button=0x7f090027;
         public static final int expanded_menu=0x7f090037;
         public static final int favorites_textview=0x7f090050;
@@ -1573,14 +1573,14 @@ containing a value of this type.
         public static final int icon=0x7f09002b;
         public static final int ifRoom=0x7f090018;
         public static final int image=0x7f090028;
-        public static final int info=0x7f090062;
-        public static final int line1=0x7f09005c;
-        public static final int line3=0x7f090060;
+        public static final int info=0x7f090064;
+        public static final int line1=0x7f09005e;
+        public static final int line3=0x7f090062;
         public static final int listMode=0x7f090009;
         public static final int list_item=0x7f09002a;
-        public static final int list_item_stop_textview=0x7f090056;
-        public static final int listview_stops_list=0x7f090055;
-        public static final int media_actions=0x7f09005a;
+        public static final int list_item_stop_textview=0x7f090058;
+        public static final int listview_stops_list=0x7f090057;
+        public static final int media_actions=0x7f09005c;
         public static final int middle=0x7f090015;
         public static final int multiply=0x7f09001e;
         public static final int never=0x7f090019;
@@ -1594,6 +1594,7 @@ containing a value of this type.
         public static final int routeplanner_textview=0x7f090051;
         public static final int screen=0x7f09001f;
         public static final int scrollView=0x7f090032;
+        public static final int search=0x7f090056;
         public static final int search_badge=0x7f090044;
         public static final int search_bar=0x7f090043;
         public static final int search_button=0x7f090045;
@@ -1614,13 +1615,14 @@ containing a value of this type.
         public static final int src_atop=0x7f090020;
         public static final int src_in=0x7f090021;
         public static final int src_over=0x7f090022;
-        public static final int status_bar_latest_event_content=0x7f090059;
+        public static final int status_bar_latest_event_content=0x7f09005b;
         public static final int submit_area=0x7f09004b;
         public static final int tabMode=0x7f09000b;
-        public static final int text=0x7f090061;
-        public static final int text2=0x7f09005f;
+        public static final int text=0x7f090063;
+        public static final int text2=0x7f090061;
         public static final int textSpacerNoButtons=0x7f090033;
-        public static final int time=0x7f09005d;
+        public static final int time=0x7f09005f;
+        public static final int time_edittext=0x7f090055;
         public static final int title=0x7f09002c;
         public static final int title_template=0x7f09002f;
         public static final int topPanel=0x7f09002e;
@@ -1663,32 +1665,35 @@ containing a value of this type.
         public static final int abc_select_dialog_material=0x7f040017;
         public static final int abc_simple_dropdown_hint=0x7f040018;
         public static final int activity_favorites=0x7f040019;
-        public static final int activity_main=0x7f04001a;
-        public static final int activity_route_planner=0x7f04001b;
-        public static final int activity_route_planner_stops=0x7f04001c;
-        public static final int fragment_favorites=0x7f04001d;
-        public static final int fragment_main=0x7f04001e;
-        public static final int fragment_route_planner=0x7f04001f;
-        public static final int fragment_route_planner_stops=0x7f040020;
-        public static final int list_item_stop=0x7f040021;
-        public static final int notification_media_action=0x7f040022;
-        public static final int notification_media_cancel_action=0x7f040023;
-        public static final int notification_template_big_media=0x7f040024;
-        public static final int notification_template_big_media_narrow=0x7f040025;
-        public static final int notification_template_lines=0x7f040026;
-        public static final int notification_template_media=0x7f040027;
-        public static final int notification_template_part_chronometer=0x7f040028;
-        public static final int notification_template_part_time=0x7f040029;
-        public static final int select_dialog_item_material=0x7f04002a;
-        public static final int select_dialog_multichoice_material=0x7f04002b;
-        public static final int select_dialog_singlechoice_material=0x7f04002c;
-        public static final int support_simple_spinner_dropdown_item=0x7f04002d;
+        public static final int activity_itineraries=0x7f04001a;
+        public static final int activity_main=0x7f04001b;
+        public static final int activity_route_planner=0x7f04001c;
+        public static final int activity_route_planner_stops=0x7f04001d;
+        public static final int fragment_favorites=0x7f04001e;
+        public static final int fragment_itineraries=0x7f04001f;
+        public static final int fragment_main=0x7f040020;
+        public static final int fragment_route_planner=0x7f040021;
+        public static final int fragment_route_planner_stops=0x7f040022;
+        public static final int list_item_stop=0x7f040023;
+        public static final int notification_media_action=0x7f040024;
+        public static final int notification_media_cancel_action=0x7f040025;
+        public static final int notification_template_big_media=0x7f040026;
+        public static final int notification_template_big_media_narrow=0x7f040027;
+        public static final int notification_template_lines=0x7f040028;
+        public static final int notification_template_media=0x7f040029;
+        public static final int notification_template_part_chronometer=0x7f04002a;
+        public static final int notification_template_part_time=0x7f04002b;
+        public static final int select_dialog_item_material=0x7f04002c;
+        public static final int select_dialog_multichoice_material=0x7f04002d;
+        public static final int select_dialog_singlechoice_material=0x7f04002e;
+        public static final int support_simple_spinner_dropdown_item=0x7f04002f;
     }
     public static final class menu {
         public static final int menu_favorites=0x7f0d0000;
-        public static final int menu_main=0x7f0d0001;
-        public static final int menu_route_planner=0x7f0d0002;
-        public static final int menu_route_planner_stops=0x7f0d0003;
+        public static final int menu_itineraries=0x7f0d0001;
+        public static final int menu_main=0x7f0d0002;
+        public static final int menu_route_planner=0x7f0d0003;
+        public static final int menu_route_planner_stops=0x7f0d0004;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1722,9 +1727,11 @@ containing a value of this type.
         public static final int hello_world=0x7f0b0019;
         public static final int origin=0x7f0b001a;
         public static final int status_bar_notification_info_overflow=0x7f0b001b;
-        public static final int title_activity_favorites=0x7f0b001c;
-        public static final int title_activity_route_planner=0x7f0b001d;
-        public static final int title_activity_route_planner_stops=0x7f0b001e;
+        public static final int time=0x7f0b001c;
+        public static final int title_activity_favorites=0x7f0b001d;
+        public static final int title_activity_itineraries=0x7f0b001e;
+        public static final int title_activity_route_planner=0x7f0b001f;
+        public static final int title_activity_route_planner_stops=0x7f0b0020;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0c0000;

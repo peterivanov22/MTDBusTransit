@@ -15,6 +15,7 @@
 
     <string name="origin">Origin</string>
     <string name="destination">Destination</string>
+    <string name="time">Time</string>
     <string name="title_activity_route_planner_stops">RoutePlannerStopsActivity</string>
     <string name="title_activity_itineraries">Itineraries</string>
 

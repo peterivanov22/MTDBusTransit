@@ -29,6 +29,22 @@
 
         </LinearLayout>
 
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/time_edittext"
+            android:hint="@string/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"/>
+
+    </LinearLayout>
+
 
 </FrameLayout>
 <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/src/main/res/layout/fragment_route_planner.xml -->

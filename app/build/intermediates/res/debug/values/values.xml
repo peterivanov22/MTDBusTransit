@@ -217,7 +217,9 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="time">Time</string>
     <string name="title_activity_favorites">FavoritesActivity</string>
+    <string name="title_activity_itineraries">Itineraries</string>
     <string name="title_activity_route_planner">RoutePlannerActivity</string>
     <string name="title_activity_route_planner_stops">RoutePlannerStopsActivity</string>
     <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->

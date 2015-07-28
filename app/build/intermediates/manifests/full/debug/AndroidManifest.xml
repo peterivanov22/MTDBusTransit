@@ -45,6 +45,10 @@
             android:label="@string/title_activity_route_planner_stops"
             android:parentActivityName="com.example.android.mtdbustransit.RoutePlannerActivity" >
         </activity>
+        <activity
+            android:name="com.example.android.mtdbustransit.Itineraries"
+            android:label="@string/title_activity_itineraries" >
+        </activity>
     </application>
 
 </manifest>
