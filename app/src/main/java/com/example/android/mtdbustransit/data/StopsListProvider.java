@@ -27,6 +27,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
+import android.text.TextUtils;
 
 import java.sql.SQLException;
 
@@ -113,18 +114,18 @@ public class StopsListProvider extends ContentProvider {
 
             case STOP_LIST:
             {
-
                 break;
             }
             // "weather/*"
             case STOP_ENTRY: {
-                qb.appendWhere();
+                qb.appendWhere(StopsListContract.StopsListEntry._ID + "=" + uri.getPathSegments().get(1));
                 break;
             }
 
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
         }
+        Cursor retCursor = qb.query(mOpenHelper.getWritableDatabase(), projection, selection, selectionArgs, null, null, sortOrder);
         retCursor.setNotificationUri(getContext().getContentResolver(), uri);
         return retCursor;
     }
@@ -155,13 +156,15 @@ public class StopsListProvider extends ContentProvider {
         // this makes delete all rows return the number of rows deleted
         if ( null == selection ) selection = "1";
         switch (match) {
-            case WEATHER:
+            case STOP_LIST:
                 rowsDeleted = db.delete(
-                        WeatherContract.WeatherEntry.TABLE_NAME, selection, selectionArgs);
+                        StopsListContract.StopsListEntry.TABLE_NAME, selection, selectionArgs);
                 break;
-            case LOCATION:
+            case STOP_ENTRY:
+                String id = uri.getPathSegments().get(1);
                 rowsDeleted = db.delete(
-                        WeatherContract.LocationEntry.TABLE_NAME, selection, selectionArgs);
+                        StopsListContract.StopsListEntry.TABLE_NAME, StopsListContract.StopsListEntry._ID + " = " + id +
+                                (!TextUtils.isEmpty(selection) ? " AND (" + selection + ')' : ""), selectionArgs);
                 break;
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
@@ -173,14 +176,7 @@ public class StopsListProvider extends ContentProvider {
         return rowsDeleted;
     }
 
-    private void normalizeDate(ContentValues values) {
-        // normalize the date value
-        if (values.containsKey(WeatherContract.WeatherEntry.COLUMN_DATE)) {
-            long dateValue = values.getAsLong(WeatherContract.WeatherEntry.COLUMN_DATE);
-            values.put(WeatherContract.WeatherEntry.COLUMN_DATE, WeatherContract.normalizeDate(dateValue));
-        }
-    }
-
+   
     @Override
     public int update(
             Uri uri, ContentValues values, String selection, String[] selectionArgs) {
@@ -189,13 +185,12 @@ public class StopsListProvider extends ContentProvider {
         int rowsUpdated;
 
         switch (match) {
-            case WEATHER:
-                normalizeDate(values);
-                rowsUpdated = db.update(WeatherContract.WeatherEntry.TABLE_NAME, values, selection,
+            case STOP_LIST:
+                rowsUpdated = db.update(StopsListContract.StopsListEntry.TABLE_NAME, values, selection,
                         selectionArgs);
                 break;
-            case LOCATION:
-                rowsUpdated = db.update(WeatherContract.LocationEntry.TABLE_NAME, values, selection,
+            case STOP_ENTRY:
+                rowsUpdated = db.update(StopsListContract.StopsListEntry.TABLE_NAME, values, selection,
                         selectionArgs);
                 break;
             default:
@@ -212,13 +207,12 @@ public class StopsListProvider extends ContentProvider {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case WEATHER:
+            case STOP_LIST:
                 db.beginTransaction();
                 int returnCount = 0;
                 try {
                     for (ContentValues value : values) {
-                        normalizeDate(value);
-                        long _id = db.insert(WeatherContract.WeatherEntry.TABLE_NAME, null, value);
+                        long _id = db.insert(StopsListContract.StopsListEntry.TABLE_NAME, null, value);
                         if (_id != -1) {
                             returnCount++;
                         }
