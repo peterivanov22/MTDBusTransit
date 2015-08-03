@@ -43,6 +43,10 @@
             android:name=".Itineraries"
             android:label="@string/title_activity_itineraries" >
         </activity>
+
+        <provider
+       android:authorities="com.example.android.mtdbustransit"
+        android:name=".data.StopsListProvider" />
     </application>
 
 </manifest>

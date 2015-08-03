@@ -70,6 +70,7 @@ public class StopsListContract {
         public static Uri buildStopsListUri(long id) {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
+
     }
 
 

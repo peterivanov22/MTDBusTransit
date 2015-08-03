@@ -49,8 +49,6 @@ public class FetchStopsTask extends AsyncTask<Void, Void, Void> {
 
             Vector<ContentValues> cVector = new Vector<ContentValues>(stopsArray.length());
 
-
-            String[] resultStrings = new String[stopsArray.length()];
             for (int i = 0; i < stopsArray.length(); i++) {
 
                 double slat;
@@ -81,7 +79,7 @@ public class FetchStopsTask extends AsyncTask<Void, Void, Void> {
                         StopsListContract.StopsListEntry.CONTENT_URI, cvArray);
             }
 
-            Log.v(LOG_TAG, "FirstStop entry: " + resultStrings[0]);
+
         } catch (JSONException e){
             Log.e(LOG_TAG, e.getMessage(), e);
             e.printStackTrace();

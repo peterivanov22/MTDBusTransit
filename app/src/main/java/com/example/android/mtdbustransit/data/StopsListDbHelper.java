@@ -14,17 +14,26 @@
 * limitations under the License.
 */
 package com.example.android.mtdbustransit.data;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import com.example.android.mtdbustransit.data.StopsListContract.StopsListEntry;
 /**
  * Manages a local database for weather data.
  */
 public class StopsListDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 6;
     static final String DATABASE_NAME = "StopsList.db";
+
+    final String SQL_CREATE_LOCATION_TABLE = "CREATE TABLE " + StopsListEntry.TABLE_NAME + " (" +
+            StopsListEntry._ID + " INTEGER PRIMARY KEY," +
+            StopsListEntry.COLUMN_STOP_NAME + " TEXT NOT NULL UNIQUE, " +
+            StopsListEntry.COLUMN_STOP_ID + " TEXT NOT NULL " +
+            ");";
+
     public StopsListDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -32,14 +41,7 @@ public class StopsListDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 // Create a table to hold locations. A location consists of the string supplied in the
 // location setting, the city name, and the latitude and longitude
-        final String SQL_CREATE_LOCATION_TABLE = "CREATE TABLE " + StopsListEntry.TABLE_NAME + " (" +
-                StopsListEntry._ID + " INTEGER PRIMARY KEY," +
-                StopsListEntry.COLUMN_STOP_NAME + " TEXT NOT NULL, " +
-                StopsListEntry.COLUMN_STOP_ID + " TEXT NOT NULL, " +
 
-                StopsListEntry.COLUMN_STOP_LAT + " REAL NOT NULL, " +
-                StopsListEntry.COLUMN_STOP_LONG + " REAL NOT NULL " +
-                " );";
 
 // Why AutoIncrement here, and not above?
 // Unique keys will be auto-generated in either case. But for weather
@@ -60,4 +62,6 @@ public class StopsListDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + StopsListEntry.TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.android.mtdbustransit;
 
+import android.app.LoaderManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class RoutePlannerFragment extends Fragment {
+public class RoutePlannerFragment extends Fragment  {
 
     public RoutePlannerFragment() {
     }

@@ -82,6 +82,12 @@ ADDED from AndroidManifest.xml:42:9
 		ADDED from AndroidManifest.xml:44:13
 	android:name
 		ADDED from AndroidManifest.xml:43:13
+provider#com.example.android.mtdbustransit.data.StopsListProvider
+ADDED from AndroidManifest.xml:47:9
+	android:authorities
+		ADDED from AndroidManifest.xml:48:8
+	android:name
+		ADDED from AndroidManifest.xml:49:9
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.2.0:20:5

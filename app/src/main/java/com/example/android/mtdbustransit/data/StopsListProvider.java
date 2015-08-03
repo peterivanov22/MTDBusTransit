@@ -44,6 +44,7 @@ public class StopsListProvider extends ContentProvider {
 
 
 
+
     /*
         Students: Here is where you need to create the UriMatcher. This UriMatcher will
         match each URI to the WEATHER, WEATHER_WITH_LOCATION, WEATHER_WITH_LOCATION_AND_DATE,
@@ -223,6 +224,29 @@ public class StopsListProvider extends ContentProvider {
                 return returnCount;
             default:
                 return super.bulkInsert(uri, values);
+        }
+    }
+
+    public Cursor getListCursor(CharSequence constraint) {
+
+        SQLiteQueryBuilder db = new SQLiteQueryBuilder();
+        db.setTables(StopsListContract.StopsListEntry.TABLE_NAME);
+
+
+        if (constraint == null || constraint.length() == 0) {
+            // Return the full list
+            return db.query(mOpenHelper.getWritableDatabase(), null,
+                    null, null, null, null,
+                    StopsListContract.StopsListEntry.COLUMN_STOP_NAME + " ASC");
+        } else {
+
+            String value = "%" + constraint.toString() + "%";
+
+
+            return db.query(mOpenHelper.getWritableDatabase(), null,
+                    StopsListContract.StopsListEntry.COLUMN_STOP_NAME + " like ? ", new String[]{value}, null, null,
+                    StopsListContract.StopsListEntry.COLUMN_STOP_NAME + " ASC");
+
         }
     }
 
