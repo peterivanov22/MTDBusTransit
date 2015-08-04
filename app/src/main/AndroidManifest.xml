@@ -4,6 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission
+        android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission
+        android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission
+        android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -45,10 +52,25 @@
         </activity>
 
         <provider
-       android:authorities="com.example.android.mtdbustransit"
-        android:name=".data.StopsListProvider" />
+        android:authorities="com.example.android.mtdbustransit"
+        android:name=".data.StopsListProvider"
+        android:exported="false"
+        android:syncable="true"    />
 
-        <service android:name=".service.MTDBusTransitService"/>
+        <service
+            android:name=".sync.MTDBusTransitService"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter" />
+
+
+        </service>
+
     </application>
 
 </manifest>

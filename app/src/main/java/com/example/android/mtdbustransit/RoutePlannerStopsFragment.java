@@ -1,7 +1,6 @@
 package com.example.android.mtdbustransit;
 
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +21,7 @@ import android.widget.ListView;
 
 import com.example.android.mtdbustransit.data.StopsListContract;
 import com.example.android.mtdbustransit.sync.MTDBusTransitService;
+import com.example.android.mtdbustransit.sync.MTDBusTransitSyncAdapter;
 
 import java.util.Locale;
 
@@ -125,8 +125,7 @@ public class RoutePlannerStopsFragment extends Fragment implements LoaderManager
 
     private void updateStopsList() {
 
-        Intent intent = new Intent(getActivity(), MTDBusTransitService.class);
-        getActivity().startService(intent);
+        MTDBusTransitSyncAdapter.syncImmediately(getActivity());
     }
 
     @Override

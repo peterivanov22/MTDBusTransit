@@ -53,6 +53,8 @@
         <provider
             android:name="com.example.android.mtdbustransit.data.StopsListProvider"
             android:authorities="com.example.android.mtdbustransit" />
+
+        <service android:name="com.example.android.mtdbustransit.service.MTDBusTransitService" />
     </application>
 
 </manifest>
