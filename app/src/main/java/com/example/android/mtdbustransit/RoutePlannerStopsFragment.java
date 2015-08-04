@@ -1,6 +1,7 @@
 package com.example.android.mtdbustransit;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,10 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 
 import com.example.android.mtdbustransit.data.StopsListContract;
+import com.example.android.mtdbustransit.sync.MTDBusTransitService;
 
 import java.util.Locale;
 
@@ -31,6 +32,7 @@ public class RoutePlannerStopsFragment extends Fragment implements LoaderManager
 
     private static final int STOPSLIST_LOADER = 0;
     private StopsListAdapter mStopsListAdapter;
+    private String filter;
 
     private static final String[] STOPSLIST_COLUMNS = {
             StopsListContract.StopsListEntry.TABLE_NAME + "." +
@@ -89,8 +91,8 @@ public class RoutePlannerStopsFragment extends Fragment implements LoaderManager
             public void afterTextChanged(Editable arg0) {
 
 
-                String text = editsearch.getText().toString().toLowerCase(Locale.getDefault());
-                mStopsListAdapter.getFilter().filter(text);
+                filter = editsearch.getText().toString().toLowerCase(Locale.getDefault());
+                getLoaderManager().restartLoader(0, null, RoutePlannerStopsFragment.this);
             }
 
 
@@ -109,14 +111,6 @@ public class RoutePlannerStopsFragment extends Fragment implements LoaderManager
         });
 
 
-
-        mStopsListAdapter.setFilterQueryProvider(new FilterQueryProvider() {
-            @Override
-            public Cursor runQuery(CharSequence constraint) {
-                return mStopsListAdapter.getListCursor(constraint);
-            }
-        });
-
         return rootView;
         }
 
@@ -130,8 +124,9 @@ public class RoutePlannerStopsFragment extends Fragment implements LoaderManager
     }
 
     private void updateStopsList() {
-        FetchStopsTask stopsTask = new FetchStopsTask(getActivity());
-        stopsTask.execute();
+
+        Intent intent = new Intent(getActivity(), MTDBusTransitService.class);
+        getActivity().startService(intent);
     }
 
     @Override
@@ -146,7 +141,15 @@ public class RoutePlannerStopsFragment extends Fragment implements LoaderManager
 
         Uri stopsListUri = StopsListContract.StopsListEntry.CONTENT_URI;
 
-        return new CursorLoader(getActivity(), stopsListUri,
+        if (filter!=null) {
+
+            String value = "%" + filter.toString() + "%";
+            return new CursorLoader(getActivity(), stopsListUri,
+                    STOPSLIST_COLUMNS, StopsListContract.StopsListEntry.COLUMN_STOP_NAME + " like ? ",
+                    new String[]{value}, sortOrder);
+        }
+
+        else return new CursorLoader(getActivity(), stopsListUri,
                 STOPSLIST_COLUMNS, null, null, sortOrder);
 
     }

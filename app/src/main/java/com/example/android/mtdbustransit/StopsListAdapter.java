@@ -44,28 +44,7 @@ public class StopsListAdapter extends CursorAdapter {
         tv.setText(convertCursorRowToUXFormat(cursor));
     }
 
-    public Cursor getListCursor(CharSequence constraint) {
 
-        SQLiteQueryBuilder db = new SQLiteQueryBuilder();
-        db.setTables(StopsListContract.StopsListEntry.TABLE_NAME);
-
-
-        if (constraint == null || constraint.length() == 0) {
-            // Return the full list
-            return db.query(mOpenHelper.getWritableDatabase(), null,
-                    null, null, null, null,
-                    StopsListContract.StopsListEntry.COLUMN_STOP_NAME + " ASC");
-        } else {
-
-            String value = "%" + constraint.toString() + "%";
-
-
-            return db.query(mOpenHelper.getWritableDatabase(), null,
-                    StopsListContract.StopsListEntry.COLUMN_STOP_NAME + " like ? ", new String[]{value}, null, null,
-                    StopsListContract.StopsListEntry.COLUMN_STOP_NAME + " ASC");
-
-        }
-    }
 }
 
 
