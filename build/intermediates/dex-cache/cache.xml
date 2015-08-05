@@ -9,18 +9,18 @@
         <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-ec01acbdceffc62b02e9e393672a1bbc353e097b.jar" />
     </item>
     <item
-        jar="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-6a33eaeabe20bdef7c399708c2e2b3722a308a0c.jar" />
-    </item>
-    <item
         jar="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
         <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-fdc1d5a6195db356076c2b936b0fec21e121bd06.jar" />
+    </item>
+    <item
+        jar="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-6a33eaeabe20bdef7c399708c2e2b3722a308a0c.jar" />
     </item>
     <item
         jar="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"

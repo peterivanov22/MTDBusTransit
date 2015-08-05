@@ -20,7 +20,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.android.mtdbustransit.data.StopsListContract;
-import com.example.android.mtdbustransit.sync.MTDBusTransitService;
 import com.example.android.mtdbustransit.sync.MTDBusTransitSyncAdapter;
 
 import java.util.Locale;

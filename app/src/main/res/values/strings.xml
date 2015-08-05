@@ -23,7 +23,7 @@
     <string name="title_activity_route_planner_stops">RoutePlannerStopsActivity</string>
     <string name="title_activity_itineraries">Itineraries</string>
 
-    < string name="sync_account_type">mtdbustransit.example.com</string>
+    <string name="sync_account_type">mtdbustransit.example.com</string>
     <string name="content_authority">com.example.android.mtdbustransit</string>
 
 </resources>

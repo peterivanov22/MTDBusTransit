@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.SyncResult;
 import android.os.Bundle;
 import android.util.Log;
+
 import com.example.android.mtdbustransit.R;
 import com.example.android.mtdbustransit.data.StopsListContract;
 
@@ -31,6 +32,24 @@ import java.util.Vector;
 public class MTDBusTransitSyncAdapter extends AbstractThreadedSyncAdapter {
 
     private final String LOG_TAG = MTDBusTransitSyncAdapter.class.getSimpleName();
+
+    //3 HOURS
+    public static final int SYNC_INTERVAL = 60 * 180;
+    public static final int SYNC_FLEXTIME = SYNC_INTERVAL/3;
+    private static final long DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
+    private static final int WEATHER_NOTIFICATION_ID = 3004;
+
+    private static final String[] NOTIFY_STOPSLIST_PROJECTION = {
+            StopsListContract.StopsListEntry.TABLE_NAME + "." +
+                    StopsListContract.StopsListEntry._ID,
+            StopsListContract.StopsListEntry.COLUMN_STOP_NAME,
+            StopsListContract.StopsListEntry.COLUMN_STOP_ID
+
+    };
+
+    private static final int COL_AUTO_STOP_ID = 0;
+    private static final int COL_STOP_NAME = 1;
+    private static final int COL_MTD_STOP_ID = 2;
 
     public MTDBusTransitSyncAdapter(Context context, boolean autoinitialize){
         super(context, autoinitialize);
@@ -188,5 +207,30 @@ public class MTDBusTransitSyncAdapter extends AbstractThreadedSyncAdapter {
             Log.e(LOG_TAG, e.getMessage(), e);
             e.printStackTrace();
         }
+
+
+
     }
+
+    public static void configurePeriodicSync(Context context, int syncInterval, int flextime) {
+        Account account = getSyncAccount(context);
+        String authority = context.getString(R.string.content_authority);
+        ContentResolver.addPeriodicSync(
+                account, authority, new Bundle(), syncInterval);
+
+    }
+
+    public static void initializeSyncAdapter(Context context) {
+        getSyncAccount(context);
+    }
+
+    private static void onAccountCreated(Account newAccount, Context context) {
+        MTDBusTransitSyncAdapter.configurePeriodicSync(context, SYNC_INTERVAL, SYNC_FLEXTIME);
+
+                ContentResolver.setSyncAutomatically(newAccount,
+                context.getString(R.string.content_authority), true);
+
+        syncImmediately(context);
+    }
+
 }
