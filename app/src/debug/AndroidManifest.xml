@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity android:name="com.example.android.mtdbustransit.SearchStopsActivity"
+            android:label="@string/title_activity_search_stops"
+            android:parentActivityName="com.example.android.mtdbustransit.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.mtdbustransit.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

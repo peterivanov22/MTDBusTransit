@@ -2,32 +2,186 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\peter\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-ec01acbdceffc62b02e9e393672a1bbc353e097b.jar" />
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-318fc63478ffa9ca105b33ed41c2a8a400a33794.jar" />
     </item>
     <item
-        jar="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\classes.jar"
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-fdc1d5a6195db356076c2b936b0fec21e121bd06.jar" />
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-b74f4db073c68a5acce1c4959a6950b02f17e972.jar" />
     </item>
     <item
-        jar="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\classes.jar"
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-6a33eaeabe20bdef7c399708c2e2b3722a308a0c.jar" />
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-0d11443b39296cbcc1633aa7b96882281eff86d5.jar" />
     </item>
     <item
-        jar="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\libs\internal_impl-22.2.0.jar"
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\peter\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-4e9972df3f540c805a674916472a7b7fe750baf1.jar" />
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-46054adf1b58aac34e10c9717c5ae293eac6ac19.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-9b7cf9921779b69af5c3f184bde0c029daea1b7a.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-222a1f37ea8d3337ddd5d474ae031df8048ba77a.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-c57ca08c4ee94ea76c114ae94307cc950ea79804.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-b2db3aa452d8e3c6168f8d01a4284d11bd4f27ce.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-46f2fa2323188214a66b8397ce9970ea9e1b2805.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-b7eb03f6981feab2f2a09bbcb079e64235ec63ab.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-4624be4436e8f48e273b1fc09e8664fae9b2dc94.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-c878202d72cc3ebb6e3f2b418eee7609e92862c0.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-0e84220ee4458c880829811142d2f44d81c5a732.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-0f7bc3b454dee1446cb41aa74cdeeeae2856d653.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-c31238430fd744ef4bff32a260f545be60448014.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-8b8004e4beb2e3c5706a81350ea386956055f388.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-9e53e00c7e4f4693fa8433c90b12d72f152df311.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-4f0f1821c8991ce607505c4a1b54e9c3a932d8f6.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-c36d280493b6c1527d239df746ed0499616ec339.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-a775f5f9bd7296b785435f9458b7c74cb17b48a7.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-51ed3f127def88016e825af6ab90721f44db93e2.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-41d938ba470dcc5358d941220bc8ca563e251e34.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-96b674a0fe7a059bc67b51c2bbdfb0f92382e25e.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-aa907a4ff9afdf89e3947d18955cef22e5b735d3.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-7093ab6ce762ddfb1d3cdadc433164218e1b4183.jar" />
+    </item>
+    <item
+        jar="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\ivanov3\AndroidStudioProjects\MTDBusTransit\app\build\intermediates\pre-dexed\debug\classes-977f80b7a1d23c02b2a535db666e26aaa523f0f9.jar" />
     </item>
 
 </items>
