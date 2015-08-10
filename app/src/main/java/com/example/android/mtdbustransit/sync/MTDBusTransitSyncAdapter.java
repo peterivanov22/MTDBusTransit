@@ -38,6 +38,7 @@ public class MTDBusTransitSyncAdapter extends AbstractThreadedSyncAdapter {
     public static final int SYNC_FLEXTIME = SYNC_INTERVAL/3;
     private static final long DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
     private static final int WEATHER_NOTIFICATION_ID = 3004;
+    private String mChangesetID;
 
     private static final String[] NOTIFY_STOPSLIST_PROJECTION = {
             StopsListContract.StopsListEntry.TABLE_NAME + "." +
@@ -69,7 +70,12 @@ public class MTDBusTransitSyncAdapter extends AbstractThreadedSyncAdapter {
 // Construct the URL for the OpenWeatherMap query
 // Possible parameters are available at OWM's forecast API page, at
 // http://openweathermap.org/API#forecast
-            URL url = new URL("https://developer.cumtd.com/api/v2.2/json/GetStops?key=0801726d5968485aa41600cc0002f50c");
+            URL url;
+            if(mChangesetID!=null) {
+               url = new URL("https://developer.cumtd.com/api/v2.2/json/GetStops?key=0801726d5968485aa41600cc0002f50c" +
+                        "&changeset_id=" + mChangesetID);
+            }
+            else  url = new URL("https://developer.cumtd.com/api/v2.2/json/GetStops?key=0801726d5968485aa41600cc0002f50c");
 // Create the request to OpenWeatherMap, and open the connection
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
@@ -164,13 +170,20 @@ public class MTDBusTransitSyncAdapter extends AbstractThreadedSyncAdapter {
         final String JSON_STOP_LAT = "stop_lat";
         final String JSON_STOP_LONG = "stop_long";
         final String JSON_STOP_ID = "stop_id";
+        final String JSON_CHANGESET_ID = "changeset_id";
 
         try {
-
+            JSONArray stopsArray;
             JSONObject stopsJson = new JSONObject(stopsJsonStr);
-            JSONArray stopsArray = stopsJson.getJSONArray(JSON_STOPS);
+
+            String changeset_id = stopsJson.getString(JSON_CHANGESET_ID);
+            mChangesetID=changeset_id;
+
+            stopsArray = stopsJson.getJSONArray(JSON_STOPS);
+
 
             Vector<ContentValues> cVector = new Vector<ContentValues>(stopsArray.length());
+
 
             for (int i = 0; i < stopsArray.length(); i++) {
 

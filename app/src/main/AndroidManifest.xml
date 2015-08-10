@@ -51,6 +51,11 @@
             android:label="@string/title_activity_route_planner_stops"
             android:parentActivityName=".RoutePlannerActivity" >
         </activity>
+        <activity
+            android:name=".SearchStopsActivity"
+            android:label="@string/title_activity_search_stops"
+            android:parentActivityName=".MainActivity" >
+        </activity>
 
         <provider
             android:name=".data.StopsListProvider"
@@ -92,6 +97,10 @@
         <activity
             android:name=".SearchStopsNearby"
             android:label="@string/title_activity_search_stops_nearby" >
+        </activity>
+        <activity
+            android:name=".LocationProviderActivity"
+            android:label="@string/title_activity_location_provider" >
         </activity>
     </application>
 

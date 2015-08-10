@@ -12,6 +12,11 @@ public class SearchStopsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_stops);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new SearchStopsActivityFragment())
+                    .commit();
+        }
     }
 
 

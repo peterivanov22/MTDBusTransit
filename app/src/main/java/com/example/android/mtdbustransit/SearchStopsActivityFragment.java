@@ -42,8 +42,7 @@ public class SearchStopsActivityFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RoutePlannerActivity.class);
-                startActivity(intent);
+
             }
         });
 

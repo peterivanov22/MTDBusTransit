@@ -2,7 +2,6 @@ package com.example.android.mtdbustransit;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteQueryBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,5 +45,3 @@ public class StopsListAdapter extends CursorAdapter {
 
 
 }
-
-
