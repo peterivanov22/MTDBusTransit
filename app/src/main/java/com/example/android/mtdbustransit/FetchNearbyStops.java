@@ -183,8 +183,6 @@ public class FetchNearbyStops extends AsyncTask<String, Void, String[]> {
             stopsArray = stopsJson.getJSONArray(JSON_STOPS);
 
 
-            Vector<ContentValues> cVector = new Vector<ContentValues>(stopsArray.length());
-
 
             for (int i = 0; i < stopsArray.length(); i++) {
 
@@ -198,6 +196,7 @@ public class FetchNearbyStops extends AsyncTask<String, Void, String[]> {
 
                 id = singleStop.getString(JSON_STOP_ID);
                 name = singleStop.getString(JSON_STOP_NAME);
+                slat = singleStop.getJSONArray("stop_points").get(0).getDouble(JSON_STOP_LAT);
 
 
                 ContentValues StopListValues = new ContentValues();

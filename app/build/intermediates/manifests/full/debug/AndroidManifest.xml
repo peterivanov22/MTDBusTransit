@@ -39,6 +39,14 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.android.mtdbustransit.SearchStopsActivity"
+            android:label="@string/title_activity_search_stops"
+            android:parentActivityName="com.example.android.mtdbustransit.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.mtdbustransit.MainActivity" />
+        </activity>
+        <activity
             android:name="com.example.android.mtdbustransit.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -68,19 +76,13 @@
             android:label="@string/title_activity_route_planner_stops"
             android:parentActivityName="com.example.android.mtdbustransit.RoutePlannerActivity" >
         </activity>
-        <activity
-            android:name="com.example.android.mtdbustransit.SearchStopsActivity"
-            android:label="@string/title_activity_search_stops"
-            android:parentActivityName="com.example.android.mtdbustransit.MainActivity" >
-        </activity>
 
         <provider
             android:name="com.example.android.mtdbustransit.data.StopsListProvider"
             android:authorities="@string/content_authority"
             android:exported="false"
             android:syncable="true" />
-
-        <!-- SyncAdapter's dummy authentication service -->
+ <!-- SyncAdapter's dummy authentication service -->
         <service android:name="com.example.android.mtdbustransit.sync.MTDBusTransitAuthenticatorService" >
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
@@ -90,8 +92,7 @@
                 android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/authenticator" />
         </service>
-
-        <!-- The SyncAdapter service -->
+ <!-- The SyncAdapter service -->
         <service
             android:name="com.example.android.mtdbustransit.sync.MTDBusTransitSyncService"
             android:exported="true" >
@@ -119,7 +120,7 @@
             android:name="com.example.android.mtdbustransit.LocationProviderActivity"
             android:label="@string/title_activity_location_provider" >
         </activity>
-        <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+ <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"

@@ -18,11 +18,28 @@ public class HelperSharedPreferences {
     public HelperSharedPreferences(Context context) {
         this.mSharedPrefs = context.getSharedPreferences(APP_SHARED_PREFS, Activity.MODE_PRIVATE);
         this.mPrefsEditor = mSharedPrefs.edit();
+        saveBaseLat();
+        saveBaseLong();
     }
 
         public static final String PREFS_LAT="prefs_lat";
         public static final String PREFS_LONG="prefs_long";
         public static final String PREFS_STOPS_LIST_CHANGESET = "stops_list_changeset";
+
+    public static final String PREFS_BASE_LAT="prefs_base_lat";
+    public static final String PREFS_BASE_LONG="prefs_base_long";
+
+    private void saveBaseLat() {
+        mPrefsEditor.putLong(PREFS_BASE_LAT, Double.doubleToRawLongBits(40.1094));
+        mPrefsEditor.commit();
+    }
+
+    private void saveBaseLong() {
+        mPrefsEditor.putLong(PREFS_BASE_LONG, Double.doubleToRawLongBits(88.2272));
+        mPrefsEditor.commit();
+    }
+
+
 
 
     public void saveCurrLat( double value) {
