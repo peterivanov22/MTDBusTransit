@@ -20,6 +20,8 @@ public class LocationProviderActivity extends ActionBarActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
 
+
+
     public abstract interface LocationCallback {
         public void handleNewLocation(Location location);
     }
