@@ -302,24 +302,32 @@ MERGED from com.google.android.gms:play-services-base:7.5.0:21:9
 		ADDED from AndroidManifest.xml:92:13
 	android:name
 		ADDED from AndroidManifest.xml:91:13
-meta-data#com.google.android.maps.v2.API_KEY
-ADDED from AndroidManifest.xml:93:9
+meta-data#com.google.android.geo.API_KEY
+ADDED from AndroidManifest.xml:95:9
 	android:value
-		ADDED from AndroidManifest.xml:95:13
+		ADDED from AndroidManifest.xml:97:13
 	android:name
-		ADDED from AndroidManifest.xml:94:13
+		ADDED from AndroidManifest.xml:96:13
 activity#com.example.android.mtdbustransit.SearchStopsNearby
-ADDED from AndroidManifest.xml:97:9
+ADDED from AndroidManifest.xml:100:9
 	android:label
-		ADDED from AndroidManifest.xml:99:13
-	android:name
-		ADDED from AndroidManifest.xml:98:13
-activity#com.example.android.mtdbustransit.LocationProviderActivity
-ADDED from AndroidManifest.xml:101:9
-	android:label
-		ADDED from AndroidManifest.xml:103:13
-	android:name
 		ADDED from AndroidManifest.xml:102:13
+	android:name
+		ADDED from AndroidManifest.xml:101:13
+activity#com.example.android.mtdbustransit.LocationProviderActivity
+ADDED from AndroidManifest.xml:106:9
+	android:label
+		ADDED from AndroidManifest.xml:108:13
+	android:name
+		ADDED from AndroidManifest.xml:107:13
+activity#com.example.android.mtdbustransit.AutocompletePlacesActivity
+ADDED from AndroidManifest.xml:110:9
+	android:label
+		ADDED from AndroidManifest.xml:112:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:113:13
+	android:name
+		ADDED from AndroidManifest.xml:111:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.2.1:20:5

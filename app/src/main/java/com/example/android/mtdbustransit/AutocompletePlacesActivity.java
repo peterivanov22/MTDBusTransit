@@ -1,6 +1,20 @@
 package com.example.android.mtdbustransit;
 
 
+import android.content.res.Resources;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.text.Html;
+import android.text.Spanned;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -10,21 +24,6 @@ import com.google.android.gms.location.places.PlaceBuffer;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import android.util.Log;
-
-import android.app.Fragment;
-import android.content.res.Resources;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.text.Html;
-import android.text.Spanned;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 public class AutocompletePlacesActivity extends FragmentActivity
         implements GoogleApiClient.OnConnectionFailedListener {
     /**
@@ -52,7 +51,7 @@ public class AutocompletePlacesActivity extends FragmentActivity
                 .enableAutoManage(this, 0 /* clientId */, this)
                 .addApi(Places.GEO_DATA_API)
                 .build();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_autocomplete_places);
 // Retrieve the AutoCompleteTextView that will display Place suggestions.
         mAutocompleteView = (AutoCompleteTextView)
                 findViewById(R.id.autocomplete_places);

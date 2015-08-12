@@ -42,7 +42,8 @@ public class SearchStopsActivityFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getActivity(), AutocompletePlacesActivity.class);
+                startActivity(intent);
             }
         });
 

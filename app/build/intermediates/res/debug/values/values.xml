@@ -279,11 +279,17 @@
     <eat-comment/>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
+    <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="autocomplete_hint">Enter place name or address</string>
     <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/res/values/cast_strings.xml -->
     <eat-comment/>
     <string name="cast_notification_connected_message">Connected to <ns1:g id="name">%1$s</ns1:g></string>
     <string name="cast_notification_connecting_message">Connecting to <ns1:g id="name">%1$s</ns1:g></string>
     <string name="cast_notification_disconnect">Disconnect</string>
+    <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="clear_text">Clear Text</string>
     <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/res/values/common_strings.xml -->
     <eat-comment/>
     <string name="common_android_wear_notification_needs_update_text"><ns1:g id="app_name">%1$s</ns1:g> requires an update to the Android Wear app.</string>
@@ -360,6 +366,8 @@
     <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="origin">Origin</string>
+    <string name="place_details">&lt;b>%1$s&lt;/b>&lt;br/>&lt;i>Place Id: %2$s&lt;/i>&lt;br/>Address: %3$s&lt;br/>Phone: %4$s&lt;br/>Website: %5$s</string>
+    <string name="selected_place">Last Selected Place:</string>
     <!-- From: file:/C:/Users/peter/AndroidStudioProjects/MTDBusTransit/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -375,6 +383,7 @@
     <eat-comment/>
     <string name="sync_account_type">mtdbustransit.example.com</string>
     <string name="time">Time</string>
+    <string name="title_activity_autocomplete_places">AutocompletePlacesActivity</string>
     <string name="title_activity_favorites">FavoritesActivity</string>
     <string name="title_activity_itineraries">Itineraries</string>
     <string name="title_activity_location_provider">LocationProviderActivity</string>
