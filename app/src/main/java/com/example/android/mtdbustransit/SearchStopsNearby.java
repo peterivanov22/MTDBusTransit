@@ -27,6 +27,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.example.android.mtdbustransit.LocationProviderActivity;
 
 
 public class SearchStopsNearby extends FragmentActivity implements OnMapReadyCallback,
@@ -56,19 +57,20 @@ public class SearchStopsNearby extends FragmentActivity implements OnMapReadyCal
 
         mAppPrefs = new HelperSharedPreferences(getApplicationContext());
 
-        mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map);
+        //mapFragment = (MapFragment) getFragmentManager()
+                //.findFragmentById(R.id.map);
 
-        mapFragment.getMapAsync(this);
+        //mapFragment.getMapAsync(this);
 
         mLocationProvider = new LocationProviderActivity(this, this);
 
         // Retrieve the AutoCompleteTextView that will display Place suggestions.
         mAutocompleteView = (AutoCompleteTextView)
-                findViewById(R.id.autocomplete_places);
+                findViewById(R.id.autocomplete_places2);
 // Register a listener that receives callbacks when a suggestion has been selected
         mAutocompleteView.setOnItemClickListener(mAutocompleteClickListener);
 // Retrieve the TextViews that will display details and attributions of the selected place.
+        mGoogleApiClient = mLocationProvider.getApiClient();
 
 // Set up the adapter that will retrieve suggestions from the Places Geo Data API that cover
 // the entire world.
@@ -89,16 +91,7 @@ read the place ID.
             final PlaceAutocompleteAdapter.PlaceAutocomplete item = mAdapter.getItem(position);
             final String placeId = String.valueOf(item.placeId);
             Log.i(TAG, "Autocomplete item selected: " + item.description);
-/*
-Issue a request to the Places Geo Data API to retrieve a Place object with additional
-details about the place.
-*/
-            PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
-                    .getPlaceById(mGoogleApiClient, placeId);
-            placeResult.setResultCallback(mUpdatePlaceDetailsCallback);
-            Toast.makeText(getApplicationContext(), "Clicked: " + item.description,
-                    Toast.LENGTH_SHORT).show();
-            Log.i(TAG, "Called getPlaceById to get Place details for " + item.placeId);
+
         }
     };
 
@@ -190,8 +183,8 @@ details about the place.
             MarkerOptions options = new MarkerOptions()
                     .position(latLng)
                     .title("I am here!");
-            mGoogleMap.addMarker(options);
-            mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+            //mGoogleMap.addMarker(options);
+            //mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
         }
 
     }

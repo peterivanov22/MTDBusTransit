@@ -22,6 +22,10 @@ public class LocationProviderActivity extends ActionBarActivity implements
         LocationListener {
 
 
+    public LocationProviderActivity() {
+    }
+
+
 
     public abstract interface LocationCallback {
         public void handleNewLocation(Location location);
@@ -59,6 +63,10 @@ public class LocationProviderActivity extends ActionBarActivity implements
                 .setFastestInterval(1 * 1000); // 1 second, in milliseconds
 
         mContext = context;
+    }
+
+    public GoogleApiClient getApiClient(){
+        return mGoogleApiClient;
     }
 
     public void connect() {

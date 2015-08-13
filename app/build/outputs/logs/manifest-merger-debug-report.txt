@@ -4,14 +4,17 @@ ADDED from AndroidManifest.xml:2:1
 	package
 		ADDED from AndroidManifest.xml:3:5
 		INJECTED from AndroidManifest.xml:0:0
+		ADDED from AndroidManifest.xml:3:5
 		INJECTED from AndroidManifest.xml:0:0
 	android:versionName
 		INJECTED from AndroidManifest.xml:0:0
+		ADDED from AndroidManifest.xml:2:1
 		INJECTED from AndroidManifest.xml:0:0
 	xmlns:android
 		ADDED from AndroidManifest.xml:2:11
 	android:versionCode
 		INJECTED from AndroidManifest.xml:0:0
+		ADDED from AndroidManifest.xml:2:1
 		INJECTED from AndroidManifest.xml:0:0
 uses-permission#android.permission.INTERNET
 ADDED from AndroidManifest.xml:5:5
@@ -76,6 +79,7 @@ ADDED from AndroidManifest.xml:17:5
 		ADDED from AndroidManifest.xml:17:22
 application
 ADDED from AndroidManifest.xml:19:5
+MERGED from AndroidManifest.xml:19:5
 MERGED from com.android.support:appcompat-v7:22.2.1:22:5
 MERGED from com.android.support:support-v4:22.2.1:22:5
 MERGED from com.android.support:support-v4:22.2.1:22:5
@@ -165,11 +169,15 @@ MERGED from com.google.android.gms:play-services-base:7.5.0:20:5
 MERGED from com.android.support:support-v4:22.2.1:22:5
 	android:label
 		ADDED from AndroidManifest.xml:22:9
+		ADDED from AndroidManifest.xml:22:9
 	android:allowBackup
+		ADDED from AndroidManifest.xml:20:9
 		ADDED from AndroidManifest.xml:20:9
 	android:icon
 		ADDED from AndroidManifest.xml:21:9
+		ADDED from AndroidManifest.xml:21:9
 	android:theme
+		ADDED from AndroidManifest.xml:23:9
 		ADDED from AndroidManifest.xml:23:9
 activity#com.example.android.mtdbustransit.MainActivity
 ADDED from AndroidManifest.xml:24:9
@@ -219,6 +227,7 @@ ADDED from AndroidManifest.xml:49:9
 		ADDED from AndroidManifest.xml:50:13
 activity#com.example.android.mtdbustransit.SearchStopsActivity
 ADDED from AndroidManifest.xml:54:9
+MERGED from AndroidManifest.xml:54:9
 	android:label
 		ADDED from AndroidManifest.xml:56:13
 	android:parentActivityName
@@ -447,7 +456,7 @@ MERGED from com.google.android.gms:play-services-maps:7.5.0:24:5
 	android:required
 		ADDED from com.google.android.gms:play-services-maps:7.5.0:26:8
 android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from AndroidManifest.xml:2:1 reason: com.google.android.gms.maps requested WRITE_EXTERNAL_STORAGE
+IMPLIED from AndroidManifest.xml:1:1 reason: com.google.android.gms.maps requested WRITE_EXTERNAL_STORAGE
 uses-permission#android.permission.GET_ACCOUNTS
 ADDED from com.google.android.gms:play-services-wallet:7.5.0:21:5
 	android:name
