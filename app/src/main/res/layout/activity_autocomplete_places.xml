@@ -33,31 +33,7 @@ limitations under the License.
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:src="@drawable/powered_by_google_light" />
-        <Button
-            android:id="@+id/button_clear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/clear_text" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/selected_place"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-        <TextView
-            android:id="@+id/place_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoLink="all"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-        <TextView
-            android:id="@+id/place_attribution"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoLink="all"
-            android:text=""
 
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+
     </LinearLayout>
 </ScrollView>

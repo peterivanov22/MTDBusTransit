@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,8 +37,8 @@ public class AutocompletePlacesActivity extends FragmentActivity
     private AutoCompleteTextView mAutocompleteView;
     private TextView mPlaceDetailsText;
     private TextView mPlaceDetailsAttribution;
-    private static final LatLngBounds BOUNDS_GREATER_SYDNEY = new LatLngBounds(
-            new LatLng(-34.041458, 150.790100), new LatLng(-33.682247, 151.383362));
+    private static final LatLngBounds BOUNDS_CAMPUS = new LatLngBounds(
+            new LatLng(40.098362, -88.23854), new LatLng(40.116251, -88.219565));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,21 +57,14 @@ public class AutocompletePlacesActivity extends FragmentActivity
 // Register a listener that receives callbacks when a suggestion has been selected
         mAutocompleteView.setOnItemClickListener(mAutocompleteClickListener);
 // Retrieve the TextViews that will display details and attributions of the selected place.
-        mPlaceDetailsText = (TextView) findViewById(R.id.place_details);
-        mPlaceDetailsAttribution = (TextView) findViewById(R.id.place_attribution);
+
 // Set up the adapter that will retrieve suggestions from the Places Geo Data API that cover
 // the entire world.
         mAdapter = new PlaceAutocompleteAdapter(this, android.R.layout.simple_list_item_1,
-                mGoogleApiClient, BOUNDS_GREATER_SYDNEY, null);
+                mGoogleApiClient, BOUNDS_CAMPUS, null);
         mAutocompleteView.setAdapter(mAdapter);
 // Set up the 'clear text' button that clears the text in the autocomplete view
-        Button clearButton = (Button) findViewById(R.id.button_clear);
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAutocompleteView.setText("");
-            }
-        });
+
     }
     /**
      * Listener that handles selections from suggestions from the AutoCompleteTextView that

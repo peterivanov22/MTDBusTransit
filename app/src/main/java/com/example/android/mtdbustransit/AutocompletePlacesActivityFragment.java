@@ -15,6 +15,10 @@ public class AutocompletePlacesActivityFragment extends Fragment {
     public AutocompletePlacesActivityFragment() {
     }
 
+    public void onCreate(Bundle savedInstanceState) {
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -1,12 +1,10 @@
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-
-
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -16,4 +14,30 @@
         tools:context="com.example.android.mtdbustransit.SearchStopsNearby"
         android:name="com.google.android.gms.maps.MapFragment" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/autocomplete_places"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="@string/autocomplete_hint"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:background="@color/navy"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/powered_by_google_light" />
+
+
     </LinearLayout>
+
+
+
+    </FrameLayout>
