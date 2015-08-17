@@ -46,7 +46,7 @@
 
         <EditText
             android:id="@+id/time_edittext"
-            android:hint="@string/time"
+            android:hint="@string/Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"/>
@@ -61,25 +61,60 @@
     </LinearLayout>
 
     <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="left"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <Button
+            android:layout_gravity="left"
+            android:id="@+id/minimize_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/minimize"/>
 
-        <Button
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/max_walk"/>
+            android:id="@+id/minimize_edittext"
+            android:hint="@string/date"/>
 
 
 
     </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+
+        <Button
+            android:id="@+id/max_walk_button"
+            android:layout_gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/max_walk"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/max_walk_edittext"
+                android:hint="@string/date"/>
+
+
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/PlanTrips_Button"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plan_trips"/>
 
     </LinearLayout>
 

@@ -43,7 +43,7 @@ public class LocationProviderActivity extends ActionBarActivity implements
 
     private LocationCallback mLocationCallback;
     private Context mContext;
-    private GoogleApiClient mGoogleApiClient;
+    protected GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
 
     public LocationProviderActivity(Context context, LocationCallback callback) {

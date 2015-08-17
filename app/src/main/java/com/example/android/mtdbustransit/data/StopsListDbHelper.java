@@ -20,6 +20,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.android.mtdbustransit.data.StopsListContract.StopsListEntry;
+import com.example.android.mtdbustransit.data.StopsListContract.nearbyStopsListEntry;
+
 /**
  * Manages a local database for weather data.
  */
@@ -28,10 +30,18 @@ public class StopsListDbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 6;
     static final String DATABASE_NAME = "StopsList.db";
 
-    final String SQL_CREATE_LOCATION_TABLE = "CREATE TABLE " + StopsListEntry.TABLE_NAME + " (" +
+    final String SQL_CREATE_STOPS_TABLE = "CREATE TABLE " + StopsListEntry.TABLE_NAME + " (" +
             StopsListEntry._ID + " INTEGER PRIMARY KEY," +
             StopsListEntry.COLUMN_STOP_NAME + " TEXT NOT NULL UNIQUE, " +
             StopsListEntry.COLUMN_STOP_ID + " TEXT NOT NULL " +
+            ");";
+
+    final String SQL_CREATE_NEARBY_STOPS_TABLE = "CREATE TABLE " + StopsListEntry.TABLE_NAME + " (" +
+            nearbyStopsListEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            nearbyStopsListEntry.COLUMN_STOP_NAME + " TEXT NOT NULL, " +
+            nearbyStopsListEntry.COLUMN_STOP_ID + " TEXT NOT NULL " +
+            nearbyStopsListEntry.COLUMN_STOP_LAT + " REAL NOT NULL" +
+            nearbyStopsListEntry.COLUMN_STOP_LONG + " REAL NOT NULL" +
             ");";
 
     public StopsListDbHelper(Context context) {
@@ -49,7 +59,8 @@ public class StopsListDbHelper extends SQLiteOpenHelper {
 // for a certain date and all dates *following*, so the forecast data
 // should be sorted accordingly.
 
-        sqLiteDatabase.execSQL(SQL_CREATE_LOCATION_TABLE);
+        sqLiteDatabase.execSQL(SQL_CREATE_STOPS_TABLE);
+        sqLiteDatabase.execSQL(SQL_CREATE_NEARBY_STOPS_TABLE);
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
@@ -60,6 +71,8 @@ public class StopsListDbHelper extends SQLiteOpenHelper {
 // If you want to update the schema without wiping data, commenting out the next 2 lines
 // should be your top priority before modifying this method.
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + StopsListEntry.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + nearbyStopsListEntry.TABLE_NAME);
+
         onCreate(sqLiteDatabase);
     }
 

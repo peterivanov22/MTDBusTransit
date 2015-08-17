@@ -1,6 +1,8 @@
 package com.example.android.mtdbustransit;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -80,6 +83,20 @@ public class RoutePlannerStopsFragment extends Fragment implements LoaderManager
 
         final ListView listView = (ListView) rootView.findViewById(R.id.listview_stops_list);
         listView.setAdapter(mStopsListAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Cursor curs = (Cursor) adapterView.getItemAtPosition(i);
+                if (curs!=null) {
+                    Intent intent = new Intent();
+                    String stop_name = curs.getString(COL_STOP_NAME);
+                    intent.putExtra("STOP_NAME", stop_name );
+                    getActivity().setResult(Activity.RESULT_OK, intent);
+                    getActivity().finish();
+                }
+            }
+
+        });
 
 
         final EditText editsearch = (EditText) rootView.findViewById(R.id.search);

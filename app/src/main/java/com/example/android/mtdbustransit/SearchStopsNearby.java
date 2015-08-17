@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -27,7 +26,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.android.mtdbustransit.LocationProviderActivity;
 
 
 public class SearchStopsNearby extends FragmentActivity implements OnMapReadyCallback,
@@ -44,6 +42,8 @@ public class SearchStopsNearby extends FragmentActivity implements OnMapReadyCal
     private static final LatLngBounds BOUNDS_CAMPUS = new LatLngBounds(
             new LatLng(40.098362, -88.23854), new LatLng(40.116251, -88.219565) );
 
+    private LatLng mPickedLatLng;
+
 
     private LocationProviderActivity mLocationProvider;
     private MapFragment mapFragment;
@@ -57,10 +57,10 @@ public class SearchStopsNearby extends FragmentActivity implements OnMapReadyCal
 
         mAppPrefs = new HelperSharedPreferences(getApplicationContext());
 
-        //mapFragment = (MapFragment) getFragmentManager()
-                //.findFragmentById(R.id.map);
+        mapFragment = (MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map);
 
-        //mapFragment.getMapAsync(this);
+        mapFragment.getMapAsync(this);
 
         mLocationProvider = new LocationProviderActivity(this, this);
 
@@ -70,7 +70,9 @@ public class SearchStopsNearby extends FragmentActivity implements OnMapReadyCal
 // Register a listener that receives callbacks when a suggestion has been selected
         mAutocompleteView.setOnItemClickListener(mAutocompleteClickListener);
 // Retrieve the TextViews that will display details and attributions of the selected place.
-        mGoogleApiClient = mLocationProvider.getApiClient();
+
+
+        mGoogleApiClient = mLocationProvider.mGoogleApiClient;
 
 // Set up the adapter that will retrieve suggestions from the Places Geo Data API that cover
 // the entire world.
@@ -91,6 +93,11 @@ read the place ID.
             final PlaceAutocompleteAdapter.PlaceAutocomplete item = mAdapter.getItem(position);
             final String placeId = String.valueOf(item.placeId);
             Log.i(TAG, "Autocomplete item selected: " + item.description);
+
+            PendingResult<PlaceBuffer> placeResult = Places.GeoDataApi
+                    .getPlaceById(mGoogleApiClient, placeId);
+
+            placeResult.setResultCallback(mPlacePickedChangeMap);
 
         }
     };
@@ -183,11 +190,38 @@ read the place ID.
             MarkerOptions options = new MarkerOptions()
                     .position(latLng)
                     .title("I am here!");
-            //mGoogleMap.addMarker(options);
-            //mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+            mGoogleMap.addMarker(options);
+            mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
         }
 
     }
+
+    private ResultCallback<PlaceBuffer> mPlacePickedChangeMap
+            = new ResultCallback<PlaceBuffer>() {
+        @Override
+        public void onResult(PlaceBuffer places) {
+            if (!places.getStatus().isSuccess()) {
+// Request did not complete successfully
+                Log.e(TAG, "Place query did not complete. Error: " + places.getStatus().toString());
+                places.release();
+                return;
+            }
+// Get the Place object from the buffer.
+            final Place place = places.get(0);
+            mPickedLatLng = place.getLatLng();
+// Format details of the place for display and show it in a TextView.
+
+            MarkerOptions options = new MarkerOptions()
+                    .position(mPickedLatLng)
+                    .title("I am here!");
+            mGoogleMap.addMarker(options);
+            mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mPickedLatLng, 15));
+
+
+            Log.i(TAG, "Place details received: " + place.getName());
+            places.release();
+        }
+    };
 
 
 }

@@ -32,4 +32,5 @@ public class RoutePlannerActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

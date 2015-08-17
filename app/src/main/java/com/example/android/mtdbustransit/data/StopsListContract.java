@@ -41,6 +41,7 @@ public class StopsListContract {
     // as the ContentProvider hasn't been given any information on what to do with "givemeroot".
     // At least, let's hope not.  Don't be that dev, reader.  Don't be that dev.
     public static final String PATH_STOPSLIST = "stopsList";
+    public static final String PATH_NEARBY_STOPSLIST = "nearbyStopsList";
 
 
     /* Inner class that defines the table contents of the location table */
@@ -73,9 +74,38 @@ public class StopsListContract {
 
     }
 
+    public static final class nearbyStopsListEntry implements BaseColumns {
+
+        public static final Uri CONTENT_URI =
+                BASE_CONTENT_URI.buildUpon().appendPath(PATH_NEARBY_STOPSLIST).build();
+
+        public static final String CONTENT_TYPE =
+                ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_NEARBY_STOPSLIST;
+        public static final String CONTENT_ITEM_TYPE =
+                ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_NEARBY_STOPSLIST;
+
+        // Table name
+        public static final String TABLE_NAME = "nearbyStopsList";
+
+        // Human readable location string, provided by the API.  Because for styling,
+        // "Mountain View" is more recognizable than 94043.
+        public static final String COLUMN_STOP_NAME = "stop_name";
+        public static final String COLUMN_STOP_ID = "stop_id";
+
+        // In order to uniquely pinpoint the location on the map when we launch the
+        // map intent, we store the latitude and longitude as returned by openweathermap.
+        public static final String COLUMN_STOP_LAT = "stop_lat";
+        public static final String COLUMN_STOP_LONG = "stop_long";
+
+        public static Uri buildNearbyStopsListUri(long id) {
+            return ContentUris.withAppendedId(CONTENT_URI, id);
+        }
+
+    }
 
 
-        public static String getLocationSettingFromUri(Uri uri) {
+
+    public static String getLocationSettingFromUri(Uri uri) {
             return uri.getPathSegments().get(1);
         }
 

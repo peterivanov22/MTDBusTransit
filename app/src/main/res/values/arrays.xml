@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="MinimizeOptions">
+        <item> @string/walking_label</item>
+        <item> @string/transfer_label</item>
+        <item> @string/time_label </item>
+
+
+    </string-array>
+
+    <string-array name="MinimizeValues">
+        <item> @string/walking</item>
+        <item> @string/transfers</item>
+        <item> @string/time</item>
+
+    </string-array>
+
+    <string-array name="MaxWalkOptions">
+        <item> 1/4 Mile</item>
+        <item> 1/2 Mile</item>
+        <item> 1 Mile</item>
+
+    </string-array>
+
+    <string-array name="MaxWalkValues">
+        <item>0.25</item>
+        <item>0.5</item>
+        <item>1</item>
+    </string-array>
+
+
+</resources>
